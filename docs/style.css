@@ -1,0 +1,104 @@
+body {
+    background: #5d8bba;
+    margin: 0;
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 260px;
+    background: #e2e2e2;
+    border-right: 1px solid #999;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.doc-item {
+    background: #fff;
+    border: 1px solid #bbb;
+    padding: 8px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.toolbar {
+    background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 50%, #dcdcdc 51%, #cbced5 100%);
+    padding: 8px;
+    border-bottom: 1px solid #8e9cad;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+button.active { 
+    background: #ffeb3b !important; 
+    border-color: #c5a000 !important; 
+}
+
+#pages-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 40px 0;
+    background: #6c6c6c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.page-wrapper { 
+    position: relative; 
+    width: 816px; 
+    height: 1056px; 
+    flex-shrink: 0;
+}
+
+.page {
+    background: white;
+    width: 100%;
+    height: 100%;
+    padding: 80px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    outline: none;
+    position: relative;
+    z-index: 1;
+}
+
+.drawing-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.canvas-active { pointer-events: all; cursor: crosshair !important; }
+.eraser-active { pointer-events: all; cursor: cell !important; }
+
+.del-page-btn {
+    position: absolute;
+    right: -110px;
+    top: 0;
+    background: #cc0000;
+    color: white;
+    border: 1px solid #990000;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.status-bar { background: #f0f0f0; border-top: 1px solid #999; padding: 3px 10px; font-size: 11px; display: flex; justify-content: space-between; flex-shrink: 0;}
+button { cursor: pointer; border: 1px solid #707070; background: #fff; padding: 2px 8px; font-size: 12px; }
+.win7-btn.blue { background: #3c7fb1; color: white; }
+.divider { width: 1px; height: 20px; background: #a0a0a0; }
